@@ -9,6 +9,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { BrowseMoviesComponent } from './movies/browse-movies/browse-movies.component';
 import { WatchListEditComponent } from './watch-list/watch-list-edit/watch-list-edit.component';
 import { SeenListEditComponent } from './seen-list/seen-list-edit/seen-list-edit.component';
+import { MovieListComponent } from './movies/movie-list/movie-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SeenListEditComponent } from './seen-list/seen-list-edit/seen-list-edit
     MoviesComponent,
     BrowseMoviesComponent,
     WatchListEditComponent,
-    SeenListEditComponent
+    SeenListEditComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule

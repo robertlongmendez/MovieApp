@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seen-list.component.css']
 })
 export class SeenListComponent implements OnInit {
+  titles = [];
 
   constructor() { }
 

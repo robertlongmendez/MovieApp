@@ -2,6 +2,10 @@
   <div class="col-xs-10">
     <app-watch-list-edit></app-watch-list-edit>
     <hr>
-    <p>The Watch List</p>
+    <ul class="list-group">
+      <a href="#" class="list-group-item" style="cursor: pointer" *ngFor="let title of titles">
+        {{ title.name }} ({{ title.genre }})
+      </a>
+    </ul>
   </div>
 </div>

@@ -1,11 +1,15 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="" alt="" class="img-reponsive">
+    <img
+    [src]="movie.imagePath"
+    alt="{{ movie.name }}"
+    class="img-reponsive"
+    style="max-height: 300px;">
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>Movie Name</h1>
+    <h1>{{ movie.name }}</h1>
   </div>
 </div>
 <div class="row">
@@ -26,8 +30,8 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Description
-  </div>
+{{ movie.description }}
+</div>
 </div>
 <div class="row">
   <div class="col-xs-12">

@@ -1,12 +1,12 @@
-<app-header></app-header>
+<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-movies></app-movies>
+      <app-movies *ngIf="loadedFeature === 'movie'"></app-movies>
       <hr>
-      <app-seen-list></app-seen-list>
-      <hr flex/>
-      <app-watch-list></app-watch-list>
+      <app-seen-list *ngIf="loadedFeature === 'seenList'"></app-seen-list>
+      <!-- <hr flex/> -->
+      <app-watch-list *ngIf="loadedFeature === 'watchList'"></app-watch-list>
     </div>
   </div>
 </div>

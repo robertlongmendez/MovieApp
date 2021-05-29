@@ -6,7 +6,7 @@
   <div class="col-md-7">
      <app-movie-detail
      *ngIf="selectedMovie; else infoText"
-     [movie]="movieSelected"></app-movie-detail>
+     [movie]="selectedMovie"></app-movie-detail>
      <ng-template #infoText>
        <p>Please select a Movie!</p>
      </ng-template>

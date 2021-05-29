@@ -19,4 +19,8 @@ export class SeenListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onTitleAdded(title: Title) {
+    this.titles.push(title);
+  }
+
 }

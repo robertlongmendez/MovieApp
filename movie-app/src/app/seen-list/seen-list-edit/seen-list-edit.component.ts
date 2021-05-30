@@ -1,6 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { Title } from 'src/app/shared/title.model';
+import { SeenListService } from '../seen-list.service';
 
 @Component({
   selector: 'app-seen-list-edit',
@@ -10,10 +11,9 @@ import { Title } from 'src/app/shared/title.model';
 export class SeenListEditComponent implements OnInit {
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('genreInput') genreInputRef: ElementRef;
-  @Output() titleAdded = new EventEmitter<Title>();
 
 
-  constructor() { }
+  constructor(private slService: SeenListService) { }
 
   ngOnInit(): void {
   }
@@ -22,7 +22,7 @@ export class SeenListEditComponent implements OnInit {
     const movName = this.nameInputRef.nativeElement.value;
     const movGenre = this.genreInputRef.nativeElement.value;
     const newTitle = new Title(movName, movGenre);
-    this.titleAdded.emit(newTitle);
+    this.slService.addTitle(newTitle);
   }
 
 }

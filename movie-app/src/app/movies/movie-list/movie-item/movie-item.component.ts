@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Movie } from '../../movie.model';
+import { MovieService } from '../../movie.service';
 
 @Component({
   selector: 'app-movie-item',
@@ -8,13 +9,13 @@ import { Movie } from '../../movie.model';
 })
 export class MovieItemComponent implements OnInit {
   @Input() movie: Movie;
-  @Output() movieSelected = new EventEmitter<void>();
-  constructor() { }
+
+  constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
   }
 
   onSelected() {
-    this.movieSelected.emit();
+    this.movieService.movieSelected.emit(this.movie);
   }
 }

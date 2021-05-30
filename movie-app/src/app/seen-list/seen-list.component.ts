@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Title } from '../shared/title.model'
+import { SeenListService } from './seen-list.service';
 
 @Component({
   selector: 'app-seen-list',
@@ -8,19 +9,11 @@ import { Title } from '../shared/title.model'
   styleUrls: ['./seen-list.component.css']
 })
 export class SeenListComponent implements OnInit {
-  titles: Title[] = [
-    new Title('Creepozoids', 'Horror/Sci-fi'),
-    new Title('The Killer Shrews', 'Sci-fi/Horror'),
-    new Title('Night of the Creeps', 'Horror/Comedy')
-  ];
+  titles: Title[];
 
-  constructor() { }
+  constructor(private slService: SeenListService) { }
 
   ngOnInit(): void {
+    this.titles = this.slService.getTitles();
   }
-
-  onTitleAdded(title: Title) {
-    this.titles.push(title);
-  }
-
 }

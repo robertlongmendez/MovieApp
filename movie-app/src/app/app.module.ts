@@ -11,6 +11,8 @@ import { SeenListEditComponent } from './seen-list/seen-list-edit/seen-list-edit
 import { MovieListComponent } from './movies/movie-list/movie-list.component';
 import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.component';
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
+import { DropdownDirective } from './shared/dropdown.directive';
+import { SeenListService } from './seen-list/seen-list.service';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,13 @@ import { MovieDetailComponent } from './movies/movie-detail/movie-detail.compone
     SeenListEditComponent,
     MovieListComponent,
     MovieItemComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [SeenListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

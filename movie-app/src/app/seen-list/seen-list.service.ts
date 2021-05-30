@@ -1,6 +1,8 @@
+import { EventEmitter } from "@angular/core";
 import { Title } from "../shared/title.model";
 
 export class SeenListService {
+  titlesChanged = new EventEmitter<Title[]>();
   private titles: Title[] = [
     new Title('Creepozoids', 'Horror/Sci-fi'),
     new Title('The Killer Shrews', 'Sci-fi/Horror'),
@@ -13,5 +15,6 @@ export class SeenListService {
 
     addTitle(title: Title) {
       this.titles.push(title);
+      this.titlesChanged.emit(this.titles.slice());
     }
 }

@@ -15,5 +15,11 @@ export class SeenListComponent implements OnInit {
 
   ngOnInit(): void {
     this.titles = this.slService.getTitles();
+    this.slService.titlesChanged
+      .subscribe(
+        (titles: Title[]) => {
+          this.titles = titles;
+        }
+      )
   }
 }

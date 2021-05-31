@@ -35,6 +35,10 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Rating
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let title of movie.titles">
+        ({{ title.genre }}) - {{ title.filmYear }}
+      </li>
+    </ul>
   </div>
 </div>

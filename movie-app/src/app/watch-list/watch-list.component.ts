@@ -9,9 +9,9 @@ import { Title } from '../shared/title.model'
 })
 export class WatchListComponent implements OnInit {
   titles: Title[] = [
-    new Title('Escape From New York', 'Action'),
-    new Title('Escape From L.A.', 'Action'),
-    new Title('The Boys From Brazil', 'Drama')
+    new Title('Escape From New York', 'Action', '1981'),
+    new Title('Escape From L.A.', 'Action', '1996'),
+    new Title('The Boys From Brazil', 'Drama', '1978')
   ];
 
   constructor() { }

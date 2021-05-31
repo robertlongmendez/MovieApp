@@ -11,6 +11,7 @@ import { SeenListService } from '../seen-list.service';
 export class SeenListEditComponent implements OnInit {
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('genreInput') genreInputRef: ElementRef;
+  @ViewChild('filmYearInput') filmYearInputRef: ElementRef;
 
 
   constructor(private slService: SeenListService) { }
@@ -21,7 +22,8 @@ export class SeenListEditComponent implements OnInit {
   onAddItem() {
     const movName = this.nameInputRef.nativeElement.value;
     const movGenre = this.genreInputRef.nativeElement.value;
-    const newTitle = new Title(movName, movGenre);
+    const movFilmYear = this.filmYearInputRef.nativeElement.value;
+    const newTitle = new Title(movName, movGenre, movFilmYear);
     this.slService.addTitle(newTitle);
   }
 

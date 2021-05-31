@@ -17,4 +17,9 @@ export class SeenListService {
       this.titles.push(title);
       this.titlesChanged.emit(this.titles.slice());
     }
+
+    addMovies(titles: Title[]) {
+      this.titles.push(...titles);
+      this.titlesChanged.emit(this.titles.slice());
+    }
 }

@@ -2,11 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-movies *ngIf="loadedFeature === 'movie'"></app-movies>
-      <hr>
-      <app-seen-list *ngIf="loadedFeature === 'seenList'"></app-seen-list>
-      <!-- <hr flex/> -->
-      <app-watch-list *ngIf="loadedFeature === 'watchList'"></app-watch-list>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

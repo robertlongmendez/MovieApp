@@ -1,8 +1,10 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { SeenListService } from '../seen-list/seen-list.service';
 import { Title } from '../shared/title.model';
 
 import { Movie } from './movie.model';
 
+@Injectable()
 export class MovieService {
     movieSelected = new EventEmitter<Movie>();
 
@@ -30,7 +32,19 @@ export class MovieService {
       ])
   ];
 
+  constructor(private slService: SeenListService) {
+
+  }
+
   getMovies() {
     return this.movies.slice();
+  }
+
+  getMovie(index: number) {
+    return this.movies[index];
+  }
+
+  addMoviesToSeenList(titles: Title) {
+    this.slService.addTitle(titles);
   }
 }

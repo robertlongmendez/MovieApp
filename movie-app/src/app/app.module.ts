@@ -13,6 +13,8 @@ import { MovieItemComponent } from './movies/movie-list/movie-item/movie-item.co
 import { MovieDetailComponent } from './movies/movie-detail/movie-detail.component';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { SeenListService } from './seen-list/seen-list.service';
+import { AppRoutingModule } from './app-routing.module';
+import { MovieStartComponent } from './movies/movie-start/movie-start.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import { SeenListService } from './seen-list/seen-list.service';
     MovieListComponent,
     MovieItemComponent,
     MovieDetailComponent,
-    DropdownDirective
+    DropdownDirective,
+    MovieStartComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [SeenListService],
   bootstrap: [AppComponent]

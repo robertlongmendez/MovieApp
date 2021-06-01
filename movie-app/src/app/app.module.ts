@@ -15,6 +15,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { SeenListService } from './seen-list/seen-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieStartComponent } from './movies/movie-start/movie-start.component';
+import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { MovieStartComponent } from './movies/movie-start/movie-start.component'
     MovieItemComponent,
     MovieDetailComponent,
     DropdownDirective,
-    MovieStartComponent
+    MovieStartComponent,
+    MovieEditComponent
   ],
   imports: [
     BrowserModule,

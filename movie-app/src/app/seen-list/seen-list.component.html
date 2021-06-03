@@ -3,7 +3,11 @@
     <app-seen-list-edit></app-seen-list-edit>
     <hr>
     <ul class="list-group">
-      <a href="#" class="list-group-item" style="cursor: pointer" *ngFor="let title of titles">
+      <a
+      class="list-group-item"
+      style="cursor: pointer"
+      *ngFor="let title of titles; let i = index"
+      (click)="onEditItem(i)">
         {{ title.name }} ({{ title.genre }}) - {{ title.filmYear }}
       </a>
     </ul>

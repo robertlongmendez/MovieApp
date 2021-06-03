@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 import { Title } from '../shared/title.model'
 import { SeenListService } from './seen-list.service';
@@ -8,18 +9,23 @@ import { SeenListService } from './seen-list.service';
   templateUrl: './seen-list.component.html',
   styleUrls: ['./seen-list.component.css']
 })
-export class SeenListComponent implements OnInit {
+export class SeenListComponent implements OnInit, OnDestroy {
   titles: Title[];
+  private tiChangeSub: Subscription;
 
   constructor(private slService: SeenListService) { }
 
   ngOnInit(): void {
     this.titles = this.slService.getTitles();
-    this.slService.titlesChanged
+    this.tiChangeSub = this.slService.titlesChanged
       .subscribe(
         (titles: Title[]) => {
           this.titles = titles;
         }
       )
+  }
+
+  ngOnDestroy(): void {
+    this.tiChangeSub.unsubscribe();
   }
 }

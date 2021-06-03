@@ -1,8 +1,8 @@
-import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 import { Title } from "../shared/title.model";
 
 export class SeenListService {
-  titlesChanged = new EventEmitter<Title[]>();
+  titlesChanged = new Subject<Title[]>();
   private titles: Title[] = [
     new Title('Creepozoids', 'Horror Sci-fi', '1987'),
     new Title('The Killer Shrews', 'Sci-fi Horror', '1959'),
@@ -15,11 +15,11 @@ export class SeenListService {
 
     addTitle(title: Title) {
       this.titles.push(title);
-      this.titlesChanged.emit(this.titles.slice());
+      this.titlesChanged.next(this.titles.slice());
     }
 
     addMovies(titles: Title[]) {
       this.titles.push(...titles);
-      this.titlesChanged.emit(this.titles.slice());
+      this.titlesChanged.next(this.titles.slice());
     }
 }

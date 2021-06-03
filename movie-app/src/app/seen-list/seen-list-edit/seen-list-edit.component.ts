@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { Title } from 'src/app/shared/title.model';
 import { SeenListService } from '../seen-list.service';
@@ -9,21 +10,17 @@ import { SeenListService } from '../seen-list.service';
   styleUrls: ['./seen-list-edit.component.css']
 })
 export class SeenListEditComponent implements OnInit {
-  @ViewChild('nameInput') nameInputRef: ElementRef;
-  @ViewChild('genreInput') genreInputRef: ElementRef;
-  @ViewChild('filmYearInput') filmYearInputRef: ElementRef;
+
 
 
   constructor(private slService: SeenListService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  onAddItem() {
-    const movName = this.nameInputRef.nativeElement.value;
-    const movGenre = this.genreInputRef.nativeElement.value;
-    const movFilmYear = this.filmYearInputRef.nativeElement.value;
-    const newTitle = new Title(movName, movGenre, movFilmYear);
+  onAddItem(form: NgForm) {
+    const value = form.value
+    const newTitle = new Title(value.name, value.genre, value.filmYear);
     this.slService.addTitle(newTitle);
   }
 

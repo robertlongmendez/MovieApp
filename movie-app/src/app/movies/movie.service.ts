@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SeenListService } from '../seen-list/seen-list.service';
 import { Title } from '../shared/title.model';
 
@@ -6,7 +6,6 @@ import { Movie } from './movie.model';
 
 @Injectable()
 export class MovieService {
-    movieSelected = new EventEmitter<Movie>();
 
    private movies: Movie[] = [
     new Movie(

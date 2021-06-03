@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Movie } from '../movie.model';
 import { MovieService } from '../movie.service';
 
@@ -13,7 +13,8 @@ export class MovieDetailComponent implements OnInit {
   id: number;
 
   constructor(private movieService: MovieService,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute,
+    private router: Router) {
 
      }
 
@@ -25,6 +26,11 @@ export class MovieDetailComponent implements OnInit {
         this.movie = this.movieService.getMovie(this.id);
       }
     )
+  }
+
+  onRateMovie() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+    // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
   // onAddToSeenList() {

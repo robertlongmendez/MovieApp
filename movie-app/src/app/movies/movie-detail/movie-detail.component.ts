@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Title } from 'src/app/shared/title.model';
 import { Movie } from '../movie.model';
 import { MovieService } from '../movie.service';
 
@@ -33,7 +34,7 @@ export class MovieDetailComponent implements OnInit {
     // this.router.navigate(['../', this.id, 'edit'], {relativeTo: this.route});
   }
 
-  // onAddToSeenList() {
-  //   this.movieService.addMoviesToSeenList(this.movie.);
-  // }
+  onAddToSeenList() {
+    this.movieService.addMoviesToSeenList(this.movie.title);
+  }
 }

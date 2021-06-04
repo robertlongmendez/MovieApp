@@ -22,7 +22,7 @@
       </button>
       <ul class="dropdown-menu" >
         <li><a style="cursor: pointer;">Add to Watch List</a></li>
-        <li><a style="cursor: pointer;">Add to Seen List</a></li>
+        <li><a style="cursor: pointer;"(click)="onAddToSeenList()">Add to Seen List</a></li>
         <li><a style="cursor: pointer;" (click)="onRateMovie()">Rate Movie</a></li>
       </ul>
     </div>
@@ -36,8 +36,8 @@
 <div class="row">
   <div class="col-xs-12">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let title of movie.titles">
-        ({{ title.genre }}) - {{ title.filmYear }}
+      <li class="list-group-item" *ngIf="movie && movie.title">
+        ({{ movie.title.genre }}) - {{ movie.title.filmYear }}
       </li>
     </ul>
   </div>

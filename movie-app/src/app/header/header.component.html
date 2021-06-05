@@ -13,10 +13,10 @@
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown" appDropdown>
-          <a style="cursor: pointer;" class="dropdown-toggle" data-bind="enable: !noResults()" role="button">Manage<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a style="cursor: pointer;">Save Data</a></li>
+        <li class="dropdown" appDropdown data-bs-toggle="dropdown" aria-expanded="false">
+          <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage<span class="caret"></span></a>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" style="cursor: pointer;">Save Data</a></li>
             <li><a style="cursor: pointer;">Fetch Data</a></li>
           </ul>
         </li>
@@ -24,3 +24,4 @@
     </div>
   </div>
 </nav>
+<!-- data-bind="enable: !noResults()"  -->

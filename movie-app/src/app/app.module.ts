@@ -16,7 +16,8 @@ import { SeenListService } from './seen-list/seen-list.service';
 import { AppRoutingModule } from './app-routing.module';
 import { MovieStartComponent } from './movies/movie-start/movie-start.component';
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +33,13 @@ import { FormsModule } from '@angular/forms';
     MovieDetailComponent,
     DropdownDirective,
     MovieStartComponent,
-    MovieEditComponent
+    MovieEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [SeenListService],

@@ -4,7 +4,7 @@ import { SeenListService } from '../seen-list/seen-list.service';
 import { Title } from '../shared/title.model';
 import { Movie } from './movie.model';
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MovieService {
 
   private movies: Movie[] = [

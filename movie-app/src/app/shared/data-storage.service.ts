@@ -5,7 +5,8 @@ import { MovieService } from "../movies/movie.service";
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
-  constructor(private http: HttpClient, private movieService: MovieService) {
+  constructor(private http: HttpClient, private movieService: MovieService) {}
+
 
 
     storeMovies() {
@@ -15,5 +16,5 @@ export class DataStorageService {
         console.log(response);
       });
     }
-  }
+
 }

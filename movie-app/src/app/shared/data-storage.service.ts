@@ -17,4 +17,11 @@ export class DataStorageService {
       });
     }
 
+    fetchMovies() {
+      return this.http.get('https://movie-database-tool-default-rtdb.firebaseio.com/movies.json')
+      .subscribe(movies => {
+        console.log(movies);
+      });
+    }
+
 }

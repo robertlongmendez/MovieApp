@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 
 import { MovieService } from "../movies/movie.service";
+import { Movie } from "../movies/movie.model";
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
@@ -18,9 +19,9 @@ export class DataStorageService {
     }
 
     fetchMovies() {
-      return this.http.get('https://movie-database-tool-default-rtdb.firebaseio.com/movies.json')
+      this.http.get<Movie[]>('https://movie-database-tool-default-rtdb.firebaseio.com/movies.json')
       .subscribe(movies => {
-        console.log(movies);
+       this.movieService.setMovies(movies);
       });
     }
 

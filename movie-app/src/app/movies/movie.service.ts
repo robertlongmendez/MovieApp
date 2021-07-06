@@ -48,4 +48,9 @@ export class MovieService {
   addMoviesToSeenList(titles: Title) {
     this.slService.addTitle(titles);
   }
+
+  deleteMovie(index: number) {
+    this.movies.splice(index, 1);
+    this.moviesChanged.next(this.movies.slice());
+  }
 }

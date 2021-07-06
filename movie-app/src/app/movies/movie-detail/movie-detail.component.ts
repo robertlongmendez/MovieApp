@@ -37,4 +37,11 @@ export class MovieDetailComponent implements OnInit {
   onAddToSeenList() {
     this.movieService.addMoviesToSeenList(this.movie.title);
   }
+
+  onDeleteRecipe() {
+    this.movieService.deleteMovie(this.id);
+        this.router.navigate(['/movies']);
+
+
+  }
 }

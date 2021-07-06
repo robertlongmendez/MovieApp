@@ -19,7 +19,7 @@ export class DataStorageService {
     }
 
     fetchMovies() {
-      this.http.get<Movie[]>('https://movie-database-tool-default-rtdb.firebaseio.com/movies.json')
+     return this.http.get<Movie[]>('https://movie-database-tool-default-rtdb.firebaseio.com/movies.json')
       .subscribe(movies => {
        this.movieService.setMovies(movies);
       });

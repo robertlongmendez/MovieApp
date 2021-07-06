@@ -28,8 +28,11 @@ export class MovieService {
     )
   ];
 
-  constructor(private slService: SeenListService) {
+  constructor(private slService: SeenListService) {}
 
+  setMovies(movies: Movie[]) {
+    this.movies = movies;
+    this.moviesChanged.next(this.movies.slice());
   }
 
   getMovies() {

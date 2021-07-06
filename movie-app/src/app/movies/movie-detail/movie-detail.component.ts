@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Title } from 'src/app/shared/title.model';
+import { Facts } from 'src/app/shared/facts.model';
 import { Movie } from '../movie.model';
 import { MovieService } from '../movie.service';
 
@@ -35,7 +35,7 @@ export class MovieDetailComponent implements OnInit {
   }
 
   onAddToSeenList() {
-    this.movieService.addMoviesToSeenList(this.movie.title);
+    this.movieService.addMoviesToSeenList(this.movie.facts);
   }
 
   onDeleteRecipe() {

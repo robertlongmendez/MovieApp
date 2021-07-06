@@ -1,39 +1,39 @@
-import { Title } from "../shared/title.model";
+import { Facts } from "../shared/facts.model";
 import { Subject } from "rxjs";
 
 export class SeenListService {
-  titlesChanged = new Subject<Title[]>();
+  factsChanged = new Subject<Facts[]>();
   startedEditing = new Subject<number>();
-  private titles: Title[] = [
-    new Title('Creepozoids', 'Horror Sci-fi', '1987'),
-    new Title('The Killer Shrews', 'Sci-fi Horror', '1959'),
-    new Title('Night of the Creeps', 'Horror Comedy', '1986')
+  private facts: Facts[] = [
+    new Facts('Creepozoids', 'Horror Sci-fi', '1987'),
+    new Facts('The Killer Shrews', 'Sci-fi Horror', '1959'),
+    new Facts('Night of the Creeps', 'Horror Comedy', '1986')
   ];
 
-  getTitles() {
-    return this.titles.slice();
+  getFacts() {
+    return this.facts.slice();
   }
 
-  getTitle(index: number) {
-    return this.titles[index];
+  getFact(index: number) {
+    return this.facts[index];
   }
 
-    addTitle(title: Title) {
-      this.titles.push(title);
-      this.titlesChanged.next(this.titles.slice());
+    addFact(title: Facts) {
+      this.facts.push(title);
+      this.factsChanged.next(this.facts.slice());
     }
 
-    addMovies(titles: Title[]) {
-      this.titles.push(...titles);
-      this.titlesChanged.next(this.titles.slice());
+    addMovies(facts: Facts[]) {
+      this.facts.push(...facts);
+      this.factsChanged.next(this.facts.slice());
     }
 
-    updateTitle(index: number, newTitle: Title) {
-      this.titles[index] = newTitle;
-      this.titlesChanged.next(this.titles.slice());
+    updateFacts(index: number, newTitle: Facts) {
+      this.facts[index] = newTitle;
+      this.factsChanged.next(this.facts.slice());
     }
-    deleteTitle(index: number) {
-      this.titles.splice(index, 1);
-      this.titlesChanged.next(this.titles.slice());
+    deleteFacts(index: number) {
+      this.facts.splice(index, 1);
+      this.factsChanged.next(this.facts.slice());
     }
 }

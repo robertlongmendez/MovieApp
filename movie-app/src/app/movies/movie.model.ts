@@ -1,15 +1,15 @@
-import { Title } from "../shared/title.model";
+import { Facts } from "../shared/facts.model";
 
 export class Movie {
   public name: string;
   public description: string;
   public imagePath: string;
-  public title: Title;
+  public facts: Facts;
 
-  constructor(name: string, desc: string, imagePath: string, title: Title) {
+  constructor(name: string, desc: string, imagePath: string, facts: Facts) {
     this.name = name;
     this.description = desc;
     this.imagePath = imagePath;
-    this.title = title;
+    this.facts = facts;
   }
 }

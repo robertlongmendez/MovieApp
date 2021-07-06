@@ -6,9 +6,9 @@
       <a
       class="list-group-item"
       style="cursor: pointer"
-      *ngFor="let title of titles; let i = index"
+      *ngFor="let fact of facts; let i = index"
       (click)="onEditItem(i)">
-        {{ title.name }} ({{ title.genre }}) - {{ title.filmYear }}
+        {{ fact.name }} ({{ fact.genre }}) - {{ fact.filmYear }}
       </a>
     </ul>
   </div>

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-import { Title } from 'src/app/shared/title.model';
+import { Facts } from 'src/app/shared/facts.model';
 import { SeenListService } from '../seen-list.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class SeenListEditComponent implements OnInit {
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
-  editedItem: Title;
+  editedItem: Facts;
 
 
   constructor(private slService: SeenListService) { }
@@ -26,7 +26,7 @@ export class SeenListEditComponent implements OnInit {
     (index: number) => {
       this.editedItemIndex = index;
       this.editMode = true;
-      this.editedItem = this.slService.getTitle(index);
+      this.editedItem = this.slService.getFact(index);
       this.slForm.setValue({
         name: this.editedItem.name,
         genre: this.editedItem.genre,
@@ -38,11 +38,11 @@ export class SeenListEditComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     const value = form.value
-    const newTitle = new Title(value.name, value.genre, value.filmYear);
+    const newFacts = new Facts(value.name, value.genre, value.filmYear);
     if (this.editMode) {
-      this.slService.updateTitle(this.editedItemIndex, newTitle);
+      this.slService.updateFacts(this.editedItemIndex, newFacts);
     } else {
-      this.slService.addTitle(newTitle);
+      this.slService.addFact(newFacts);
       }
       this.editMode = false;
       form.reset();
@@ -54,7 +54,7 @@ export class SeenListEditComponent implements OnInit {
   }
 
   onDelete() {
-    this.slService.deleteTitle(this.editedItemIndex);
+    this.slService.deleteFacts(this.editedItemIndex);
     this.onClear();
 
   }

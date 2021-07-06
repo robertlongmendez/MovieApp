@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { SeenListService } from '../seen-list/seen-list.service';
-import { Title } from '../shared/title.model';
+import { Facts } from '../shared/facts.model';
 import { Movie } from './movie.model';
 
 @Injectable({providedIn: 'root'})
@@ -14,19 +14,19 @@ export class MovieService {
       'Attack of the Killer Tomatoes',
       'Aaargh!...',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrvQEBxBu-xAvpeHP6Srio3VI2iXj26vLC5BnM8qGETOezQ4ergsY60jlpWpn56XI8sTQ&usqp=CAU',
-        new Title('Attack of the Killer Tomatoes', 'Horror Comedy', '1978')
+        new Facts('Attack of the Killer Tomatoes', 'Horror Comedy', '1978')
       ),
     new Movie(
       'Arcade',
       'The game wants to play with you.',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6nUdtA3UVAPClm30Jz2TPzNVrijb6wrpiF0ciY5NJ3QEqbwmPcwRma0_xzBTpxIzBOiY&usqp=CAU',
-      new Title('Arcarde', 'Sci-fi Horror', '1993')
+      new Facts('Arcarde', 'Sci-fi Horror', '1993')
     ),
     new Movie(
       'The Giant Gila Monster',
       'Pretty Straight Forward',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLsLW26rNqWteyo7fIdRfB7-IuGvzXbLnF1zkQ5S1IcDoDrB2HWgyHedrah7vYHqWsQ8&usqp=CAU',
-      new Title('The Giant Gila Monster', 'Sci-fi Horror', '1959')
+      new Facts('The Giant Gila Monster', 'Sci-fi Horror', '1959')
     )
   ];
 
@@ -45,8 +45,8 @@ export class MovieService {
     return this.movies[index];
   }
 
-  addMoviesToSeenList(titles: Title) {
-    this.slService.addTitle(titles);
+  addMoviesToSeenList(facts: Facts) {
+    this.slService.addFact(facts);
   }
 
   deleteMovie(index: number) {
@@ -56,6 +56,11 @@ export class MovieService {
 
   updateMovie(index: number, newMovie: Movie) {
     this.movies[index] = newMovie;
+    this.moviesChanged.next(this.movies.slice());
+  }
+
+  addMovie(movie: Movie) {
+    this.movies.push(movie);
     this.moviesChanged.next(this.movies.slice());
   }
 

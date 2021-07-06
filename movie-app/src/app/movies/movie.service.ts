@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 import { SeenListService } from '../seen-list/seen-list.service';
 import { Title } from '../shared/title.model';
@@ -6,6 +7,7 @@ import { Movie } from './movie.model';
 
 @Injectable({providedIn: 'root'})
 export class MovieService {
+  moviesChanged = new Subject<Movie[]>()
 
   private movies: Movie[] = [
     new Movie(

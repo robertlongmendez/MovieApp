@@ -32,6 +32,10 @@ this.movies = this.movieService.getMovies();
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 
+  onMovieFeed() {
+    this.router.navigate(['movie-feed'], {relativeTo: this.route});
+  }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

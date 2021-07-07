@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AuthComponent } from "./auth/auth.component";
+import { MovieFeedComponent } from "./movie-feed/movie-feed.component";
 import { MovieDetailComponent } from "./movies/movie-detail/movie-detail.component";
 import { MovieEditComponent } from "./movies/movie-edit/movie-edit.component";
 import { MovieStartComponent } from "./movies/movie-start/movie-start.component";
 import { MoviesComponent } from "./movies/movies.component";
 import { SeenListComponent } from "./seen-list/seen-list.component";
-import { WatchListComponent } from "./watch-list/watch-list.component";
 
 const appRoutes: Routes = [
 
@@ -14,12 +14,12 @@ const appRoutes: Routes = [
   { path: 'movies', component: MoviesComponent, children: [
     { path: '', component: MovieStartComponent },
     { path: 'new', component: MovieEditComponent },
+    { path: 'movie-feed', component: MovieFeedComponent },
     { path: ':id', component: MovieDetailComponent },
     { path: ':id/edit', component: MovieEditComponent }
 
   ] },
   { path: 'seen-list', component: SeenListComponent },
-  { path: 'watch-list', component: WatchListComponent },
   { path: 'auth', component: AuthComponent }
 
 ];

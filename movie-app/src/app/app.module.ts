@@ -19,6 +19,7 @@ import { MovieStartComponent } from './movies/movie-start/movie-start.component'
 import { MovieEditComponent } from './movies/movie-edit/movie-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AuthComponent } from './auth/auth.component';
     DropdownDirective,
     MovieStartComponent,
     MovieEditComponent,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

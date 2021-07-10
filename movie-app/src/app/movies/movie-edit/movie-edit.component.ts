@@ -3,7 +3,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { MovieService } from '../movie.service';
-import { Facts } from 'src/app/shared/facts.model';
 
 @Component({
   selector: 'app-movie-edit',
@@ -47,14 +46,13 @@ movieForm: FormGroup;
     let movieName = '';
     let movieImagePath = '';
     let movieDescription = '';
-    let movieFacts: Facts;
+    let movieDate: '';
 
     if (this.editMode) {
           const movie = this.movieService.getMovie(this.id);
           movieName = movie.name;
           movieImagePath = movie.imagePath;
           movieDescription = movie.description;
-          movieFacts = movie.facts;
 
     }
 
@@ -62,7 +60,7 @@ movieForm: FormGroup;
     'name': new FormControl(movieName, Validators.required),
     'imagePath': new FormControl(movieImagePath, Validators.required),
     'description': new FormControl(movieDescription, Validators.required),
-    'facts': new FormControl(movieFacts, Validators.required)
+    'date': new FormControl(movieDate, Validators.required)
         });
       }
 }

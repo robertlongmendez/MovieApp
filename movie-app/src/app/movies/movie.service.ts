@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
-import { SeenListService } from '../seen-list/seen-list.service';
 import { Facts } from '../shared/facts.model';
 import { Movie } from './movie.model';
 
@@ -31,7 +30,7 @@ export class MovieService {
   // ];
   private movies: Movie[] = [];
 
-  constructor(private slService: SeenListService) {}
+  constructor() {}
 
   setMovies(movies: Movie[]) {
     this.movies = movies;
@@ -46,9 +45,9 @@ export class MovieService {
     return this.movies[index];
   }
 
-  addMoviesToSeenList(facts: Facts) {
-    this.slService.addFact(facts);
-  }
+  // addMoviesToSeenList(facts: Facts) {
+  //   this.slService.addFact(facts);
+  // }
 
   deleteMovie(index: number) {
     this.movies.splice(index, 1);

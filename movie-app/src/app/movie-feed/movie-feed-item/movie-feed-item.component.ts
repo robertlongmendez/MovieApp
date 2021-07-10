@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   templateUrl: './movie-feed-item.component.html',
   styleUrls: ['./movie-feed-item.component.css']
 })
-export class PostComponent {
+export class MovieFeedItemComponent {
   @Input() title: string;
   @Input() content: string;
   @Input() poster: string;

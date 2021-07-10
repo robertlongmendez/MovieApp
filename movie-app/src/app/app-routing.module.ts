@@ -6,7 +6,6 @@ import { MovieDetailComponent } from "./movies/movie-detail/movie-detail.compone
 import { MovieEditComponent } from "./movies/movie-edit/movie-edit.component";
 import { MovieStartComponent } from "./movies/movie-start/movie-start.component";
 import { MoviesComponent } from "./movies/movies.component";
-import { SeenListComponent } from "./seen-list/seen-list.component";
 
 const appRoutes: Routes = [
 
@@ -19,7 +18,6 @@ const appRoutes: Routes = [
     { path: ':id/edit', component: MovieEditComponent }
 
   ] },
-  { path: 'seen-list', component: SeenListComponent },
   { path: 'auth', component: AuthComponent }
 
 ];

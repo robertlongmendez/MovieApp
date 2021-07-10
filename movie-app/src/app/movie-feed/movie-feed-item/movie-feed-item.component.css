@@ -1,0 +1,22 @@
+article {
+  padding: 1rem;
+  margin: 1rem auto;
+  font-family: 'Oswald', sans-serif;
+  width: 400px;
+
+}
+
+h1 {
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.itemconfiguration
+    {
+        height: 440px;
+        width: 215px;
+        overflow: auto;
+        float: left;
+        position: relative;
+        margin-left: -5px;
+    }

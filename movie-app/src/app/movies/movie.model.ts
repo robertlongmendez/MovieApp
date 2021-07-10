@@ -1,15 +1,14 @@
-import { Facts } from "../shared/facts.model";
 
 export class Movie {
   public name: string;
   public description: string;
   public imagePath: string;
-  public facts: Facts;
+  public date: string;
 
-  constructor(name: string, desc: string, imagePath: string, facts: Facts) {
+  constructor(name: string, desc: string, imagePath: string, date: string) {
     this.name = name;
     this.description = desc;
     this.imagePath = imagePath;
-    this.facts = facts;
+    this.date = date;
   }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Poster } from "../shared/poster.model";
+import { Post } from "../shared/poster.model";
 
 @Component({
   selector: 'app-movie-feed',
@@ -9,14 +9,14 @@ import { Poster } from "../shared/poster.model";
 })
 
 export class MovieFeedComponent implements OnInit {
-  posts: Poster[] = [];
+  posts: Post[] = [];
 
   constructor(private http: HttpClient) {}
 
 
    ngOnInit() {
     this.http
-      .get<Poster[]>('')
+      .get<Post[]>('https://api.themoviedb.org/3/movie/top_rated?api_key=97b2f2c2656e5a8bc166291808c8c4b2')
       .subscribe(fetchedPosts => (this.posts = fetchedPosts['results']));
 
   }

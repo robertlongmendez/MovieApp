@@ -11,12 +11,4 @@ h1 {
   font-weight: bold;
 }
 
-.itemconfiguration
-    {
-        height: 440px;
-        width: 215px;
-        overflow: auto;
-        float: left;
-        position: relative;
-        margin-left: -5px;
-    }
+

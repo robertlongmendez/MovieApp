@@ -16,7 +16,7 @@ export class MovieFeedComponent implements OnInit {
 
    ngOnInit() {
     this.http
-      .get<Post[]>('https://api.themoviedb.org/3/movie/top_rated?api_key=97b2f2c2656e5a8bc166291808c8c4b2')
+      .get<Post[]>('https://api.themoviedb.org/3/movie/popular?api_key=97b2f2c2656e5a8bc166291808c8c4b2')
       .subscribe(fetchedPosts => (this.posts = fetchedPosts['results']));
 
   }

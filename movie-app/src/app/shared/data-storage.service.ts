@@ -13,6 +13,7 @@ export class DataStorageService {
 
     storeMovies() {
       const movies = this.movieService.getMovies();
+      debugger
       return this.http.put('https://movie-database-tool-default-rtdb.firebaseio.com/movies.json', movies).subscribe(response =>
       {
         console.log(response);

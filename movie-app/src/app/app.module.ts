@@ -20,6 +20,7 @@ import { MovieFeedItemComponent } from './movie-feed/movie-feed-item/movie-feed-
 import { StreamingComponent } from './movie-feed/streaming/streaming.component';
 import { TrailerComponent } from './movie-feed/trailer/trailer.component';
 import { TrailerModalComponent } from './trailer-modal/trailer-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TrailerModalComponent } from './trailer-modal/trailer-modal.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
